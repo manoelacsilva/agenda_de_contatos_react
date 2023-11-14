@@ -1,11 +1,19 @@
-import EstiloGlobal from './styles'
+import { Provider } from 'react-redux'
+
+import EstiloGlobal, { Container } from './styles'
+import Formulario from './containers/Formulario'
+import ListaDeContatos from './containers/ListaDeContatos'
+import store from './store'
 
 function App() {
   return (
-    <div className="App">
+    <Provider store={store}>
       <EstiloGlobal />
-      <h1>Teste Manoela Coelho Nome</h1>
-    </div>
+      <Container>
+        <Formulario />
+        <ListaDeContatos />
+      </Container>
+    </Provider>
   )
 }
 
