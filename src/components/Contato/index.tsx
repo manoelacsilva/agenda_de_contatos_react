@@ -23,14 +23,14 @@ const Contato = ({
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [tell, setTell] = useState('')
+  const [tell, setTell] = useState(0)
   const [estaEditando, setEstaEditando] = useState(false)
 
   useEffect(() => {
     if (
       nameOriginal.length > 0 &&
       emailOriginal.length > 0 &&
-      tellOriginal.length > 0
+      tellOriginal > 0
     ) {
       setName(nameOriginal)
       setEmail(emailOriginal)
@@ -60,10 +60,10 @@ const Contato = ({
             />
             <Style.Descricao
               disabled={!estaEditando}
-              value={tell}
-              onChange={(evento: {
-                target: { value: SetStateAction<string> }
-              }) => setTell(evento.target.value)}
+              value={tell.toString()}
+              onChange={(evento: React.ChangeEvent<HTMLTextAreaElement>) =>
+                setTell(Number(evento.target.value))
+              }
             />
             <Style.Descricao
               disabled={!estaEditando}

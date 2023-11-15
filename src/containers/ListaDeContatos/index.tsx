@@ -12,7 +12,7 @@ const ListaDeContatos = () => {
       <ul>
         {itens.map(
           (contact: {
-            tell: string
+            tell: number
             email: string
             id: number
             name: string

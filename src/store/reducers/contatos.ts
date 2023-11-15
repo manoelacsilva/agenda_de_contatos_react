@@ -10,19 +10,19 @@ const initialState: ContatosState = {
     {
       id: 1,
       name: 'Manoela',
-      tell: '48911223344',
+      tell: 48911223344,
       email: 'manoela@gmail.com'
     },
     {
       id: 2,
       name: 'Aline',
-      tell: '48911223355',
+      tell: 48911223355,
       email: 'aline@gmail.com'
     },
     {
       id: 3,
       name: 'Marcelo',
-      tell: '48911223366',
+      tell: 48911223366,
       email: 'marcelo@gmail.com'
     }
   ]

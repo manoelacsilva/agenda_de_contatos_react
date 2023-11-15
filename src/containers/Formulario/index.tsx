@@ -1,4 +1,4 @@
-import { FormEvent, SetStateAction, useState } from 'react'
+import React, { FormEvent, SetStateAction, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Button, Campo } from '../../styles'
 import * as Style from './styles'
@@ -11,7 +11,7 @@ const Formulario = () => {
   const { itens } = useSelector((state: RootReducer) => state.contatos)
 
   const [name, setName] = useState('')
-  const [tell, setTell] = useState('')
+  const [tell, setTell] = useState(0)
   const [email, setEmail] = useState('')
 
   const cadastrarContato = (event: FormEvent) => {
@@ -29,7 +29,7 @@ const Formulario = () => {
   const limparCampos = () => {
     setTimeout(() => {
       setName('')
-      setTell('')
+      setTell(0)
       setEmail('')
     }, 100)
   }
@@ -50,11 +50,11 @@ const Formulario = () => {
           required
         />
         <Campo
-          value={tell}
-          onChange={(event: { target: { value: SetStateAction<string> } }) =>
-            setTell(event.target.value)
+          value={tell.toString()}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+            setTell(Number(event.target.value))
           }
-          type="text"
+          type="tell"
           placeholder="Telefone"
           required
         />
