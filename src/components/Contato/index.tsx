@@ -91,14 +91,14 @@ const Contato = ({
             </>
           ) : (
             <>
+              <Style.BotaoEditar onClick={() => setEstaEditando(true)}>
+                <img src={lapis} alt="Editar Contato" />
+              </Style.BotaoEditar>
               <Style.BotaoCancelarEDeletar
                 onClick={() => dispatch(remover(id))}
               >
                 <img src={lixeira} alt="Excluir Contato" />
               </Style.BotaoCancelarEDeletar>
-              <Style.BotaoEditar onClick={() => setEstaEditando(true)}>
-                <img src={lapis} alt="Editar Contato" />
-              </Style.BotaoEditar>
             </>
           )}
         </Style.ContainerButtons>

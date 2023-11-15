@@ -14,13 +14,13 @@ const initialState: ContatosState = {
       email: 'manoela@gmail.com'
     },
     {
-      id: 1,
+      id: 2,
       name: 'Aline',
       tell: '48911223355',
       email: 'aline@gmail.com'
     },
     {
-      id: 1,
+      id: 3,
       name: 'Marcelo',
       tell: '48911223366',
       email: 'marcelo@gmail.com'

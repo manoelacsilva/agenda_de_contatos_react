@@ -6,6 +6,7 @@ const EstiloGlobal = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Rajdhani', sans-serif;
+    list-style: none;
   }
 `
 
@@ -20,27 +21,34 @@ export const Container = styled.div`
 `
 
 export const Campo = styled.input`
-  padding: 8px;
+  padding: 10px;
   width: 100%;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
-  background-color: #fff;
-  border: 1px solid #666666;
-  border-radius: 8px;
+  background-color: #f1f1f1;
+  border: none;
+  border-radius: 32px;
   color: #666666;
+  outline: none;
+  letter-spacing: 1px;
+  box-shadow: rgba(0, 0, 0, 0.35) 1px 2px 3px;
 `
 
 export const Button = styled.button`
   text-transform: capitalize;
-  padding: 8px 16px;
+  padding: 0px 0px 0px 16px;
   cursor: pointer;
   font-weight: bold;
 
-  background-color: blue;
+  background-color: white;
   color: #fff;
 
   border: none;
   border-radius: 4px;
+
+  img {
+    max-width: 60px;
+  }
 `
 
 export default EstiloGlobal

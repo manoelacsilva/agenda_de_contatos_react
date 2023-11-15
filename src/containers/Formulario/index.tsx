@@ -38,7 +38,6 @@ const Formulario = () => {
     <>
       <Style.Header>
         <h1>AGENDA DE CONTATOS</h1>
-        <h2>{itens.length} contatos cadastrados</h2>
       </Style.Header>
       <Style.Form onSubmit={cadastrarContato}>
         <Campo
@@ -72,6 +71,9 @@ const Formulario = () => {
           <img src={adicionar} alt="Adicionar Contato" />
         </Button>
       </Style.Form>
+      <Style.QuantidadeDeContatosSalvos>
+        <h2>{itens.length} contato(s) cadastrado(s)</h2>
+      </Style.QuantidadeDeContatosSalvos>
     </>
   )
 }

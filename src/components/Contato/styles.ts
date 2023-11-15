@@ -7,7 +7,7 @@ export const CardContato = styled.div`
   border-radius: 6px;
   margin-bottom: 24px;
   padding: 16px;
-  background-color: rgb(245, 246, 250);
+  background-color: #f1f1f1;
   box-shadow: rgba(0, 0, 0, 0.35) 1px 2px 3px;
 
   img {
@@ -23,6 +23,7 @@ export const ContainerStatus = styled.div`
   ul {
     textarea:first-child {
       font-weight: bold;
+      letter-spacing: 1px;
     }
   }
 `
@@ -34,22 +35,41 @@ export const ContainerButtons = styled.div`
 `
 
 export const BotaoCancelarEDeletar = styled(Button)`
-  background-color: red;
+  background-color: #f1f1f1;
+  padding: 0px;
+
+  img {
+    max-width: 30px;
+    max-height: 30px;
+  }
 `
 
 export const BotaoEditar = styled(Button)`
-  background-color: yellow;
+  background-color: #f1f1f1;
+  padding: 0px;
+
+  img {
+    max-width: 30px;
+    max-height: 30px;
+  }
 `
 
 export const BotaoSalvar = styled(Button)`
-  background-color: green;
+  background-color: #f1f1f1;
+
+  img {
+    max-width: 30px;
+    max-height: 30px;
+  }
 `
 
 export const Descricao = styled.textarea`
-  display: inline-block;
-  font-size: 14px;
+  display: inline;
+  font-size: 16px;
+  text-align: center;
+  padding-top: 10px;
   resize: none;
   border: none;
   background-color: transparent;
-  margin-left: 12px;
+  outline: none;
 `
