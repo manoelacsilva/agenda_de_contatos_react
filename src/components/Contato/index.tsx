@@ -54,23 +54,30 @@ const Contato = ({
             <Style.Descricao
               disabled={!estaEditando}
               value={name}
-              onChange={(evento: {
+              onChange={(event: {
                 target: { value: SetStateAction<string> }
-              }) => setName(evento.target.value)}
+              }) => setName(event.target.value)}
             />
             <Style.Descricao
               disabled={!estaEditando}
-              value={tell.toString()}
-              onChange={(evento: React.ChangeEvent<HTMLTextAreaElement>) =>
-                setTell(Number(evento.target.value))
-              }
+              value={tell === 0 ? '' : tell.toString()}
+              onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => {
+                const inputValue = event.target.value
+                const numericValue = parseInt(inputValue, 10)
+
+                if (!isNaN(numericValue)) {
+                  setTell(numericValue)
+                } else if (inputValue === '') {
+                  setTell(0)
+                }
+              }}
             />
             <Style.Descricao
               disabled={!estaEditando}
               value={email}
-              onChange={(evento: {
+              onChange={(event: {
                 target: { value: SetStateAction<string> }
-              }) => setEmail(evento.target.value)}
+              }) => setEmail(event.target.value)}
             />
           </ul>
         </Style.ContainerStatus>

@@ -24,14 +24,10 @@ const Formulario = () => {
         tell
       })
     )
-  }
 
-  const limparCampos = () => {
-    setTimeout(() => {
-      setName('')
-      setTell(0)
-      setEmail('')
-    }, 100)
+    setName('')
+    setTell(0)
+    setEmail('')
   }
 
   return (
@@ -50,11 +46,18 @@ const Formulario = () => {
           required
         />
         <Campo
-          value={tell.toString()}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-            setTell(Number(event.target.value))
-          }
-          type="tell"
+          value={tell === 0 ? '' : tell.toString()}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            const inputValue = event.target.value
+            const numericValue = parseInt(inputValue, 10)
+
+            if (!isNaN(numericValue)) {
+              setTell(numericValue)
+            } else if (inputValue === '') {
+              setTell(0)
+            }
+          }}
+          type="tel"
           placeholder="Telefone"
           required
         />
@@ -67,7 +70,7 @@ const Formulario = () => {
           placeholder="E-mail"
           required
         />
-        <Button type="submit" onClick={limparCampos}>
+        <Button type="submit">
           <img src={adicionar} alt="Adicionar Contato" />
         </Button>
       </Style.Form>
